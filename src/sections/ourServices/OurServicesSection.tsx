@@ -5,8 +5,26 @@ import GridList from "../../components/GridList/GridList";
 import CardListItem from "../../components/ui/CardListItem";
 import servicesBackGroundImage from '../../assets/servicesBackground.png'
 import StrokeText from "../../components/StrokeText/StrokeText";
-
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
+gsap.registerPlugin(useGSAP)
+gsap.registerPlugin(ScrollTrigger)
 export default function OurServicesSection() {
+    const container = useRef(null)
+    useGSAP(() => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: container.current,
+                start: 'center bottom'
+            }
+        })
+        tl.from('#card-1', { x: -50, opacity: 0, duration: .5 })
+            .from('#card-2', { y: -50, opacity: 0 })
+            .from('#card-3', { y: 50, opacity: 0 })
+            .from('#card-4', { x: 50, opacity: 0 })
+    }, { scope: container })
     return (
         <section className=" text-white bg-primary relative pb-16 z-[12] ">
             {/* overlay */}
@@ -14,9 +32,9 @@ export default function OurServicesSection() {
 
 
             <StrokeText title="Our Services" />
-            <div className="mt-10">
-                <GridList >
-                    <GridCard number={1} >
+            <div ref={container} className="mt-10">
+                <GridList  >
+                    <GridCard id="card-1" number={1} >
                         <GridCardHeader text="Domestic Ground Transport" />
 
                         <GridCardBody>
@@ -26,7 +44,7 @@ export default function OurServicesSection() {
 
                     </GridCard>
 
-                    <GridCard number={2} >
+                    <GridCard id="card-2" number={2} >
                         <GridCardHeader text="International Vehicle Shipping" />
 
                         <GridCardBody>
@@ -36,7 +54,7 @@ export default function OurServicesSection() {
 
                     </GridCard>
 
-                    <GridCard number={3} >
+                    <GridCard id="card-3" number={3} >
                         <GridCardHeader text="Luxury & Classic Car Transport" />
 
                         <GridCardBody>
@@ -45,7 +63,7 @@ export default function OurServicesSection() {
                         </GridCardBody>
 
                     </GridCard>
-                    <GridCard number={4} >
+                    <GridCard id="card-4" number={4} >
                         <GridCardHeader text="Heavy Equipment Shipping" />
 
                         <GridCardBody>

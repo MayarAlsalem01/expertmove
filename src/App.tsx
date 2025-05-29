@@ -4,12 +4,15 @@ import Hero from './sections/hero/Hero';
 import Navbar from './components/navbar/Navbar';
 import OurServicesSection from './sections/ourServices/OurServicesSection';
 import AboutUs from './sections/aboutUs/AboutUs';
+
 function App() {
+
+
   return (
-    <div className="App scroll-smooth ">
+    <div className="App  ">
       {/* overlaies */}
       <div className='relative z-30'>
-        <img src={landingBackgroundImage} className='absolute -z-10 grayscale  h-screen w-full' alt="" />
+        <img src={landingBackgroundImage} className='absolute -z-10 grayscale object-cover object-center  h-screen w-full' alt="" />
         <div className='overlay  w-full h-screen z-[-1]  absolute top-0 left-0 bg-gradient-to-r from-[#151844]/90  to-primary/0 '></div>
 
         <Navbar />
