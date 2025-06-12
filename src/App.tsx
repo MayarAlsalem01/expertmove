@@ -4,6 +4,8 @@ import Hero from './sections/hero/Hero';
 import Navbar from './components/navbar/Navbar';
 import OurServicesSection from './sections/ourServices/OurServicesSection';
 import AboutUs from './sections/aboutUs/AboutUs';
+import Footer from './sections/footer/Footer';
+
 
 function App() {
 
@@ -27,6 +29,7 @@ function App() {
         <div className='w-1/2 md:w-1/5 h-20 absolute left-0 -top-10 bg-transparent border-[2px] border-secondrey rounded-br-[150px] opacity-80  z-30'></div>
         <AboutUs />
       </div>
+      <Footer />
     </div >
   );
 }

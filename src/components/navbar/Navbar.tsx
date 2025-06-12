@@ -29,7 +29,7 @@ export default function Navbar() {
                         >{link.label}</NavItem>
                     ))
                 }
-
+                <NavItem href='http://wa.me/+4917615299417'>Contact</NavItem>
 
             </ul>
             <button className='md:hidden mr-10 bg-secondrey text-white px-3 py-1 rounded' onClick={() => { setIsVisible(!isVisible) }}>Menu</button>
